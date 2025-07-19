@@ -1,0 +1,15 @@
+[workspace]
+members = ["typegraph", "typegraph-macros", "typegraph-test"]
+resolver = "2"
+
+[workspace.dependencies]
+deluxe = "0.5"
+itertools = "0.14"
+quote = "1"
+petgraph = "0.8"
+proc-macro2 = "1"
+rand = "0.9"
+syn = { version = "2", features = ["full", "visit"] }
+typegraph = { path = "./typegraph" }
+typegraph-macros = { path = "./typegraph-macros" }
+typosaurus = { git = "https://github.com/nicksenger/typosaurus.git", branch = "typegraph" }

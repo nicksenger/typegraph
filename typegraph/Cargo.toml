@@ -1,0 +1,16 @@
+[package]
+name = "typegraph"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+default = []
+inert = ["typegraph-macros/inert"]
+std = []
+value = ["std", "dep:petgraph", "typegraph-macros/value"]
+graphviz = ["value"]
+
+[dependencies]
+petgraph = { workspace = true, optional = true }
+typegraph-macros.workspace = true
+typosaurus.workspace = true
