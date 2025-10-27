@@ -1,3 +1,4 @@
+use std::string::String;
 use std::sync::atomic::{AtomicBool, AtomicUsize};
 use std::sync::Condvar;
 use std::task::Waker;

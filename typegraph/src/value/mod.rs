@@ -1,3 +1,8 @@
+use std::format;
+use std::string::String;
+use std::string::ToString;
+use std::vec;
+use std::vec::Vec;
 use typosaurus::collections::graph::{Graph, OutgoingEdgeList, ValueList};
 use typosaurus::collections::list::{self, List};
 use typosaurus::collections::Container;

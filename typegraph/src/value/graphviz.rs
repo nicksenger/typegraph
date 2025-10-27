@@ -1,4 +1,9 @@
 use super::{EdgeKind, EdgeKindWithIxs, NodeKind, ValueGraph};
+use crate::value::format;
+use crate::value::String;
+use crate::value::Vec;
+use std::boxed::Box;
+use std::string::ToString;
 
 pub trait Graphviz {
     fn render() -> String;

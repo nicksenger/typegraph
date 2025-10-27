@@ -4,4 +4,4 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-typegraph = { workspace = true, features = ["graphviz"] }
+typegraph = { workspace = true, features = ["graphviz", "std"] }

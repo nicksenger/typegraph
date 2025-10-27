@@ -1,9 +1,12 @@
 use core::ops::Add;
+use std::boxed::Box;
 use std::cell::RefCell;
 use std::collections::{HashMap, VecDeque};
+use std::format;
 use std::marker::PhantomData;
 use std::sync::{Arc, Mutex, Weak};
 use std::thread::JoinHandle;
+use std::vec::Vec;
 
 use typosaurus::bool::{False, Falsy, Or};
 use typosaurus::cmp::Equality;
