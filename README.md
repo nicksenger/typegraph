@@ -2,6 +2,8 @@
 
 Typegraph is a Rust library for creating type-level graphs of Rust types. It enables you to visualize and analyze the relationships between your types at compile time.
 
+![Test Visualization Output](./test_output.png)
+
 ## Overview
 
 Typegraph allows you to build graphs that represent your Rust types and their relationships. These graphs can be used for documentation, analysis, or simply as a way to better understand your codebase structure.
