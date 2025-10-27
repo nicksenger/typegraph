@@ -1,39 +1,87 @@
 # Typegraph
 
-Type-level Graphs of Rust Types  
+Typegraph is a Rust library for creating type-level graphs of Rust types. It enables you to visualize and analyze the relationships between your types at compile time.
 
-**Beginner Crates**: _I can code it all by myself!_
+## Overview
 
-This is a crate the compiler READS ALOUD to find out just
-how smart the code is. The first time you
-read it, don't go fast! This Crate is a tricky crate.
-It'll sometimes get rustc in trouble.
+Typegraph allows you to build graphs that represent your Rust types and their relationships. These graphs can be used for documentation, analysis, or simply as a way to better understand your codebase structure.
 
-![Tokio Current Thread Runtime](./tokio_current_thread_runtime.png "Tokio Current Thread Runtime")
+### Key Features
 
-_Take it SLOWLY._ 
+- **Type-level graphs**: Create graphs that represent your Rust types at compile time
+- **Automatic graph generation**: Use derive macros to automatically generate type graphs
+- **Graph visualization**: Export graphs to Graphviz format for visualization
+- **Flexible graph structure**: Support for various relationship types between types
+- **No_std support**: Works in both `std` and `no_std` environments
 
-_This Crate is **DANGEROUS**!
+## Getting Started
 
-**Beginner Crates**, a division of The Department.
+Add Typegraph to your Cargo.toml:
 
-Launched by
-_bicksenger_ in 2025
-with [typosaurus](https://github.com/nicksenger/typosaurus),
-**BEGINNER Crates**
-are made for computers
-learning to code 
-**all by themselves.**
+```toml
+[dependencies]
+typegraph = "0.1.0"
+```
 
-Fun, funny, and 
-easy to verify,
-there are more than 
-50 classic and new proofs 
-to choose from.
+### Basic Usage
 
-Put one in the hands
-of an agent and 
-you'll hear them say:
+```rust
+use typegraph::{typegraph, Typegraph};
 
-**"I can code it all by myself!"**
+#[typegraph]
+pub struct MyType {
+    field: u32,
+    other: String,
+}
+
+#[typegraph]
+impl MyType {
+    pub fn new() -> Self {
+        Self {
+            field: 42,
+            other: "hello".to_string(),
+        }
+    }
+}
+```
+
+### Graph Visualization
+
+```rust
+use typegraph::{typegraph, Graphviz};
+
+#[typegraph]
+pub struct Foo {
+    bar: Bar,
+}
+
+#[typegraph]
+pub struct Bar {
+    value: u32,
+}
+
+// Generate Graphviz output
+let graph = typegraph::Resolve<Foo>;
+let output = graph.render();
+println!("{}", output);
+```
+
+## Features
+
+- **value**: Enable value-level representations of types
+- **graphviz**: Enable Graphviz export functionality
+- **std**: Enable std-specific types and functionality
+- **inert**: Enable inert type-level computation
+
+## Documentation
+
+For detailed documentation, see the [docs.rs page](https://docs.rs/typegraph).
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the Apache License, Version 2.0.
 
